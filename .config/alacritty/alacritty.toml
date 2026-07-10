@@ -1,0 +1,19 @@
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.85
+
+[font]
+size = 10.0 
+
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
+
+[colors.primary]
+background = "#0b0d1a"
+foreground = "#9c9c9c"
+
+[colors.cursor]
+cursor = "#9c9c9c"
+text = "#0b0d1a"

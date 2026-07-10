@@ -1,0 +1,108 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#079c8d)\
+$os\
+[](bg:#057065 fg:#079c8d)\
+$directory\
+[](bg:#03423c fg:#057065)\
+$git_branch\
+$git_status\
+[](bg:#101d1b fg:#03423c)\
+$nodejs\
+$bun\
+$rust\
+$golang\
+$php\
+[](bg:#0a1211 fg:#101d1b)\
+$time\
+[ ](fg:#0a1211)\
+\n$character"""
+
+# --- PALETA TURQUESA ESCURO / ESMERALDA (#079c8d) ---
+# OS:          #079c8d (Turquesa Puro)
+# Diretório:   #057065 (Turquesa Médio Escuro)
+# Git:         #03423c (Deep Teal)
+# Linguagens:  #101d1b (Dark Charcoal Teal)
+# Relógio:     #0a1211 (Quase Preto Esmeralda)
+
+[directory]
+style = "fg:#e3e5e5 bg:#057065"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#03423c"
+format = '[[ $symbol $branch ](fg:#079c8d bg:#03423c)]($style)'
+
+[git_status]
+style = "bg:#03423c"
+format = '[[($all_status$ahead_behind )](fg:#079c8d bg:#03423c)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#101d1b"
+format = '[[ $symbol ($version) ](fg:#079c8d bg:#101d1b)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:#101d1b"
+format = '[[ $symbol ($version) ](fg:#079c8d bg:#101d1b)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#101d1b"
+format = '[[ $symbol ($version) ](fg:#079c8d bg:#101d1b)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#101d1b"
+format = '[[ $symbol ($version) ](fg:#079c8d bg:#101d1b)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#101d1b"
+format = '[[ $symbol ($version) ](fg:#079c8d bg:#101d1b)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" 
+style = "bg:#0a1211"
+format = '[[  $time ](fg:#079c8d bg:#0a1211)]($style)'
+
+[os]
+style = "bg:#079c8d fg:#0a1211"
+format = "[ $symbol ]($style)"
+disabled = false
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""

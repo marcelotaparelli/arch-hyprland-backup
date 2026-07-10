@@ -4,11 +4,12 @@ Configurações minimalistas de sistema e ferramentas de desenvolvimento.
 
 ---
 
+
+<br>
+
 ## Como fazer o Backup (Atualizar este repositório)
 
 Sempre que eu fizer alterações visuais ou modificar arquivos na minha pasta .config, posso atualizar este repositório com os comandos abaixo:
-
-<br>
 
 ### 1. Sincroniza as configurações locais para a pasta do backup
 rsync -a --exclude='.git' ~/.config/{hypr,waybar,alacritty,nvim,yazi,starship,fastfetch} ~/dotfiles/.config/

@@ -8,7 +8,7 @@ Configurações minimalistas de sistema e ferramentas de desenvolvimento.
 
 Sempre que eu fizer alterações visuais ou modificar arquivos na minha pasta .config, posso atualizar este repositório com os comandos abaixo:
 
-<br><br>
+<br>
 
 ### 1. Sincroniza as configurações locais para a pasta do backup
 rsync -a --exclude='.git' ~/.config/{hypr,waybar,alacritty,nvim,yazi,starship,fastfetch} ~/dotfiles/.config/
@@ -25,6 +25,8 @@ git push origin main
 ```
 
 ---
+
+<br>
 
 ## Como Restaurar em uma Máquina Nova (Recovery)
 

@@ -9,13 +9,13 @@ Configurações minimalistas de sistema e ferramentas de desenvolvimento.
 Sempre que eu fizer alterações visuais ou modificar arquivos na minha pasta .config, posso atualizar este repositório com os comandos abaixo:
 
 --- COMANDOS DE BACKUP ---
-# 1. Sincroniza as configurações locais para a pasta do backup
+### 1. Sincroniza as configurações locais para a pasta do backup
 rsync -a --exclude='.git' ~/.config/{hypr,waybar,alacritty,nvim,yazi,starship,fastfetch} ~/dotfiles/.config/
 
-# 2. Atualiza a lista de pacotes explícitos do sistema
+### 2. Atualiza a lista de pacotes explícitos do sistema
 pacman -Qe | awk '{print $1}' > ~/dotfiles/pacman-basics.txt
 
-# 3. Envia as alterações para o GitHub
+### 3. Envia as alterações para o GitHub
 cd ~/dotfiles
 git add .
 git commit -m "update: atualizando minhas configurações"
@@ -41,10 +41,10 @@ sudo pacman -S --needed $(cat ~/dotfiles/pacotes_arch.txt)
 
 ### 3. Sincronizar as configurações para a pasta do sistema
 --- COMANDOS ---
-# Cria a pasta .config do sistema se ela não existir
+#### Cria a pasta .config do sistema se ela não existir
 mkdir -p ~/.config
 
-# Copia tudo de volta do backup para o computador
+#### Copia tudo de volta do backup para o computador
 rsync -a ~/dotfiles/.config/ ~/.config/
 ----------------
 

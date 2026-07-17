@@ -21,11 +21,13 @@ neovim
 networkmanager
 nvidia-open-dkms
 nvidia-utils
+openssh
 pipewire
 pipewire-audio
 pipewire-pulse
 pulsemixer
 ripgrep
+rsync
 slurp
 tree-sitter-cli
 ttf-firacode-nerd

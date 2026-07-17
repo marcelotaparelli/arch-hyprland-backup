@@ -19,7 +19,7 @@ rsync -a --exclude='.git' ~/.config/{hypr,waybar,alacritty,nvim,yazi,starship,fa
 ### 2. Atualiza a lista de pacotes explícitos do sistema
 ```bash
 pacman -Qe | awk '{print $1}' > ~/dotfiles/pacman-basics.txt
-``
+```
 
 ### 3. Envia as alterações para o GitHub
 ```bash

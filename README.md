@@ -12,10 +12,14 @@ Configurações minimalistas de sistema e ferramentas de desenvolvimento.
 Sempre que eu fizer alterações visuais ou modificar arquivos na minha pasta .config, posso atualizar este repositório com os comandos abaixo:
 
 ### 1. Sincroniza as configurações locais para a pasta do backup
+```bash
 rsync -a --exclude='.git' ~/.config/{hypr,waybar,alacritty,nvim,yazi,starship,fastfetch} ~/dotfiles/.config/
+```
 
 ### 2. Atualiza a lista de pacotes explícitos do sistema
+```bash
 pacman -Qe | awk '{print $1}' > ~/dotfiles/pacman-basics.txt
+``
 
 ### 3. Envia as alterações para o GitHub
 ```bash

@@ -4,6 +4,10 @@ base
 base-devel
 brightnessctl
 cmake
+docker
+docker-buildx
+docker-compose
+docx2txt
 efibootmgr
 fastfetch
 fd
@@ -28,6 +32,7 @@ pipewire-pulse
 pulsemixer
 ripgrep
 rsync
+signal-desktop
 slurp
 tree-sitter-cli
 ttf-firacode-nerd

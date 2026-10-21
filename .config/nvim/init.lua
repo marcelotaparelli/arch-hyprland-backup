@@ -102,6 +102,11 @@ do
   vim.g.have_nerd_font = false
 
   -- [[ Setting options ]]
+  vim.o.tabstop = 2
+  vim.o.shiftwidth = 2
+  vim.o.softtabstop = 2
+  vim.o.expandtab = true
+
   --  See `:help vim.o`
   -- NOTE: You can change these options as you wish!
   --  For more options, you can see `:help option-list`
@@ -344,7 +349,10 @@ do
   -- We first install it from https://github.com/NMAC427/guess-indent.nvim
   -- and then call its `setup()` function to start it with default settings.
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
-  require('guess-indent').setup {}
+  require('guess-indent').setup {
+    filetype_exclude = { 'newtrw', 'tutor' },
+    override_editorconfig= false,
+  }
 
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
@@ -704,7 +712,12 @@ do
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+    ts_ls = {
+      cmd = {
+        vim.fn.expand '~/.bun/bin/typescript-language-server',
+        '--stdio',
+      },
+    },
 
     stylua = {}, -- Used to format Lua code
 
@@ -760,12 +773,17 @@ do
   --    :Mason
   --
   -- You can press `g?` for help in this menu.
-  local ensure_installed = vim.tbl_keys(servers or {})
+  local ensure_installed = vim.tbl_filter(function(name)
+    return name ~= 'ts_ls'
+  end, vim.tbl_keys(servers or {}))
+
   vim.list_extend(ensure_installed, {
-    -- You can add other tools here that you want Mason to install
+    -- outras ferramentas que o Mason deve instalar
   })
 
-  require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+  require('mason-tool-installer').setup {
+    ensure_installed = ensure_installed,
+  }
 
   for name, server in pairs(servers) do
     vim.lsp.config(name, server)

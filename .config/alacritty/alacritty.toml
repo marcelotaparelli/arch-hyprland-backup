@@ -3,7 +3,7 @@ padding = { x = 10, y = 10 }
 opacity = 0.85
 
 [font]
-size = 10.0 
+size = 8.5 
 
 normal = { family = "FiraCode Nerd Font", style = "Regular" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
